@@ -1,7 +1,11 @@
+const fs = require('fs');
+
 const inquirer = require('inquirer');
 const Engineer = require('./lib/Engineer');
 const Manager = require('./lib/Manager');
 const Intern = require('./lib/Intern');
+
+const generateHTML = require('./src/generateHTML');
 
 const managers = [];
 const engineers = [];
@@ -48,22 +52,22 @@ function createEngineer(){
         {
             type: 'input',
             name: 'name',
-            message: 'What is the managers name?',
+            message: 'What is the engineers name?',
         },
         {
             type: 'input',
             name: 'id',
-            message: 'What is the managers id?',
+            message: 'What is the engineers id?',
         },
         {
             type: 'input',
             name: 'email',
-            message: 'What is the managers email?',
+            message: 'What is the engineers email?',
         },
         {
             type: 'input',
             name: 'officeNumber',
-            message: 'What is the managers office number?',
+            message: 'What is the engineers GitHub username?',
         },
     ]).then(function (answers) {
         console.log(answers);
@@ -80,7 +84,7 @@ function createIntern(){
         {
             type: 'input',
             name: 'name',
-            message: 'What is the interns name',
+            message: 'What is the interns name?',
         },
         {
             type: 'input',
@@ -90,7 +94,7 @@ function createIntern(){
         {
             type: 'input',
             name: 'email',
-            message: 'What is the managers email?',
+            message: 'What is the interns email?',
         },
         {
             type: 'input',
@@ -127,7 +131,7 @@ function createTeam() {
                     createEngineer();
                     break;
                 default:
-                    //generateHTML();
+                    fs.writeFileSync('./dist/team.html', generateHTML({ managers, engineers, interns }));
                     return;
             }
         });
