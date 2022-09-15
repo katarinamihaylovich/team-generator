@@ -66,7 +66,7 @@ function createEngineer(){
         },
         {
             type: 'input',
-            name: 'officeNumber',
+            name: 'github',
             message: 'What is the engineers GitHub username?',
         },
     ]).then(function (answers) {
@@ -98,7 +98,7 @@ function createIntern(){
         },
         {
             type: 'input',
-            name: 'officeNumber',
+            name: 'school',
             message: 'What is the interns school?',
         },
     ]).then(function (answers) {

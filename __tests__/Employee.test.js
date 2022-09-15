@@ -32,19 +32,19 @@ describe('Test Employee Class', () => {
         expect(me.getEmail()).toEqual('klulum@yahoo.com');
     })
 
-    it('can get email via getName() method', () => {
+    it('can get name via getName() method', () => {
         const me = new Employee(1, 'klulum@yahoo.com', 'lulu');
 
         expect(me.getName()).toEqual('lulu');
     })
 
-    it('can get email via getId() method', () => {
+    it('can get ID via getId() method', () => {
         const me = new Employee(1, 'klulum@yahoo.com', 'lulu');
 
         expect(me.getId()).toEqual(1);
     })
     
-    it('can get email via getRole() method', () => {
+    it('can get Role via getRole() method', () => {
         const me = new Employee(1, 'klulum@yahoo.com', 'lulu');
 
         expect(me.getRole()).toEqual('Employee');
